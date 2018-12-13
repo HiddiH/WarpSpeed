@@ -5,6 +5,7 @@
 #include "event_handler.hpp"
 #include "particle.hpp"
 #include "random.hpp"
+#include <cmath>
 
 int main(int argc, char* argv[])
 {
@@ -12,10 +13,20 @@ int main(int argc, char* argv[])
     EventHandler eh;
 
     window.createWindow();
-    Particle* parts[50];
-    for (int i = 0; i < 50; ++i)
+
+    const int total = 1000;
+    Particle* parts[total];
+    for (int i = 0; i < total; ++i)
     {
-        parts[i] = new Particle(Random::randBetween(0,1000),Random::randBetween(0,1000));
+        int x = Random::randBetween(0,1000);
+        int y = Random::randBetween(0,1000);
+        
+        while (abs(x*x + y*y)<100)
+        {
+            int x = Random::randBetween(0,1000);
+            int y = Random::randBetween(0,1000);
+        }
+        parts[i] = new Particle(x, y);
     }
 
     float dt=0.05;
@@ -25,7 +36,7 @@ int main(int argc, char* argv[])
         eh.handleEvents();
         // window.drawBackground(0,0,0);
         
-        for (int i = 0; i < 50; ++i)
+        for (int i = 0; i < total; ++i)
         {
             auto p = parts[i];
             p->tick(dt);
@@ -33,6 +44,6 @@ int main(int argc, char* argv[])
         }
 
         SDL_RenderPresent(window.getRenderer());
-        SDL_Delay(1000/60.0);
+        SDL_Delay(1000/120.0);
     }
 }

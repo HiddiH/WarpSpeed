@@ -14,7 +14,9 @@ Particle::Particle(float pos_x, float pos_y)
 void Particle::tick(float dt)
 {
     /* Update velocity based on acceleration */
-    vel += acc * dt;
+    // vel += acc * dt;
+    vel += (pos - Vec2D(500,500));
+    vel = vel * 0.1;
 
     /* Update position based on velocity */
     pos += vel * dt;
