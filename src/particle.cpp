@@ -18,7 +18,7 @@ void Particle::tick(float t)
     Vec2D dir = (pos-Vec2D(500,500));
     dir.normalize();
 
-    vel = dir * (0.5/(1+exp(-4*(t-2))));
+    vel = dir * (0.5/(1+exp(-4*(t-3)))+0.0001);
 
     /* Update position based on velocity */
     pos += vel;
