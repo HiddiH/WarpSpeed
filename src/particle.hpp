@@ -4,13 +4,14 @@
  * Particle Class
  */
 #include <SDL2/SDL.h>
+#include "vector.hpp"
 
 class Particle
 {
     private:
-        float pos_x, pos_y;
-        float vel_x, vel_y;
-        float acc_x, acc_y;
+        Vec2D pos;
+        Vec2D vel;
+        Vec2D acc;
 
     public:
         Particle(float pos_x, float pos_y);
