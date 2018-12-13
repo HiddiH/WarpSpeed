@@ -21,11 +21,6 @@ int main(int argc, char* argv[])
         int x = Random::randBetween(0,1000);
         int y = Random::randBetween(0,1000);
         
-        while (abs(x*x + y*y)<100)
-        {
-            int x = Random::randBetween(0,1000);
-            int y = Random::randBetween(0,1000);
-        }
         parts[i] = new Particle(x, y);
     }
 
@@ -39,11 +34,11 @@ int main(int argc, char* argv[])
         for (int i = 0; i < total; ++i)
         {
             auto p = parts[i];
-            p->tick(dt);
+            p->tick(SDL_GetTicks()/1000);
             p->show(window.getRenderer());
         }
 
         SDL_RenderPresent(window.getRenderer());
-        SDL_Delay(1000/120.0);
+        SDL_Delay(1000/500.0);
     }
 }

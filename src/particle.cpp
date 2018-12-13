@@ -5,21 +5,23 @@
  */
 
 #include "particle.hpp"
+#include <cmath>
 
 Particle::Particle(float pos_x, float pos_y)
     : pos(pos_x, pos_y)
 {
 }
 
-void Particle::tick(float dt)
+void Particle::tick(float t)
 {
     /* Update velocity based on acceleration */
-    // vel += acc * dt;
-    vel += (pos - Vec2D(500,500));
-    vel = vel * 0.1;
+    Vec2D dir = (pos-Vec2D(500,500));
+    dir.normalize();
+
+    vel = dir * (0.5/(1+exp(-4*(t-2))));
 
     /* Update position based on velocity */
-    pos += vel * dt;
+    pos += vel;
 
     acc.x = 0;
     acc.y = 0;

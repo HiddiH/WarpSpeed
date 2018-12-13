@@ -4,6 +4,8 @@
  * 2D Vector math
  */
 
+#include <cmath>
+
 class Vec2D
 {
     private:
@@ -14,6 +16,9 @@ class Vec2D
         Vec2D();
         Vec2D(float x, float y);
         
+        float getMag();
+        void normalize();
+
         /* Operator Overloading */
         Vec2D operator*(const float& f);
 

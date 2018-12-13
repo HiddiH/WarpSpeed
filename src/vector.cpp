@@ -15,6 +15,18 @@ Vec2D::Vec2D(float x, float y)
 {
 }
 
+float Vec2D::getMag()
+{
+    return sqrt(x*x+y*y);
+}
+
+void Vec2D::normalize()
+{
+    float mag = getMag();
+    x * (1/mag);
+    y * (1/mag);
+}
+
 Vec2D Vec2D::operator*(const float& f)
 {
     return Vec2D(f*x, f*y);
