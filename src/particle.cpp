@@ -8,7 +8,7 @@
 #include <cmath>
 
 Particle::Particle(float pos_x, float pos_y)
-    : pos(pos_x, pos_y)
+    : pos(pos_x, pos_y), origin(pos_x, pos_y)
 {
 }
 
@@ -36,5 +36,5 @@ void Particle::applyForce(float x, float y)
 void Particle::show(SDL_Renderer* r)
 {
     SDL_SetRenderDrawColor(r, 255, 255, 255, 255);
-    SDL_RenderDrawPoint(r, pos.x, pos.y);
+    SDL_RenderDrawLine(r, pos.x, pos.y, origin.x, origin.y);
 }

@@ -1,0 +1,56 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/45968eff/
+%.o	makefile	/^%.o: %.cpp $(DEPS)$/;"	t
+../bin/run_linux64	makefile	/^..\/bin\/run_linux64: $(OBJ)$/;"	t
+CC	makefile	/^CC=g++$/;"	m
+DEPS	makefile	/^DEPS=window.hpp event_handler.hpp particle.hpp vector.hpp random.hpp$/;"	m
+EventHandler	event_handler.cpp	/^EventHandler::EventHandler()$/;"	f	class:EventHandler
+EventHandler	event_handler.hpp	/^class EventHandler$/;"	c
+LIBS	makefile	/^LIBS=-lSDL2$/;"	m
+OBJ	makefile	/^OBJ=main.o window.o event_handler.o particle.o vector.o random.o$/;"	m
+Particle	particle.cpp	/^Particle::Particle(float pos_x, float pos_y)$/;"	f	class:Particle
+Particle	particle.hpp	/^class Particle$/;"	c
+Random	random.cpp	/^Random::Random(unsigned int seed)$/;"	f	class:Random
+Random	random.hpp	/^class Random$/;"	c
+Vec2D	vector.cpp	/^Vec2D::Vec2D()$/;"	f	class:Vec2D
+Vec2D	vector.cpp	/^Vec2D::Vec2D(float x, float y)$/;"	f	class:Vec2D
+Vec2D	vector.hpp	/^class Vec2D$/;"	c
+acc	particle.hpp	/^        Vec2D acc;$/;"	m	class:Particle	typeref:typename:Vec2D
+applyForce	particle.cpp	/^void Particle::applyForce(float x, float y)$/;"	f	class:Particle	typeref:typename:void
+createWindow	window.cpp	/^void window::createWindow()$/;"	f	class:window	typeref:typename:void
+drawBackground	window.cpp	/^void window::drawBackground(char r, char g, char b)$/;"	f	class:window	typeref:typename:void
+event	event_handler.hpp	/^        SDL_Event event;$/;"	m	class:EventHandler	typeref:typename:SDL_Event
+getMag	vector.cpp	/^float Vec2D::getMag()$/;"	f	class:Vec2D	typeref:typename:float
+getRenderer	window.cpp	/^SDL_Renderer* window::getRenderer()$/;"	f	class:window	typeref:typename:SDL_Renderer *
+handleEvents	event_handler.cpp	/^void EventHandler::handleEvents()$/;"	f	class:EventHandler	typeref:typename:void
+height	window.hpp	/^        const int width, height;$/;"	m	class:window	typeref:typename:const int
+main	main.cpp	/^int main(int argc, char* argv[])$/;"	f	typeref:typename:int
+needQuit	event_handler.cpp	/^bool EventHandler::needQuit()$/;"	f	class:EventHandler	typeref:typename:bool
+need_quit	event_handler.hpp	/^        bool need_quit = false; $/;"	m	class:EventHandler	typeref:typename:bool
+normalize	vector.cpp	/^void Vec2D::normalize()$/;"	f	class:Vec2D	typeref:typename:void
+operator *	vector.cpp	/^Vec2D Vec2D::operator*(const float& f)$/;"	f	class:Vec2D	typeref:typename:Vec2D
+operator +	vector.cpp	/^Vec2D Vec2D::operator+(const Vec2D& v2)$/;"	f	class:Vec2D	typeref:typename:Vec2D
+operator +=	vector.cpp	/^Vec2D& Vec2D::operator+=(const Vec2D& v2)$/;"	f	class:Vec2D	typeref:typename:Vec2D &
+operator -	vector.cpp	/^Vec2D Vec2D::operator-(const Vec2D& v2)$/;"	f	class:Vec2D	typeref:typename:Vec2D
+operator -=	vector.cpp	/^Vec2D& Vec2D::operator-=(const Vec2D& v2)$/;"	f	class:Vec2D	typeref:typename:Vec2D &
+pos	particle.hpp	/^        Vec2D pos;$/;"	m	class:Particle	typeref:typename:Vec2D
+randBetween	random.cpp	/^int Random::randBetween(int a, int b)$/;"	f	class:Random	typeref:typename:int
+renderer	window.hpp	/^        SDL_Renderer *renderer;$/;"	m	class:window	typeref:typename:SDL_Renderer *
+seed	random.cpp	/^unsigned int Random::seed = 0;$/;"	m	class:Random	typeref:typename:unsigned int
+seed	random.hpp	/^        static unsigned int seed;$/;"	m	class:Random	typeref:typename:unsigned int
+show	particle.cpp	/^void Particle::show(SDL_Renderer* r)$/;"	f	class:Particle	typeref:typename:void
+surf	window.hpp	/^        SDL_Surface *surf = nullptr;$/;"	m	class:window	typeref:typename:SDL_Surface *
+tick	particle.cpp	/^void Particle::tick(float t)$/;"	f	class:Particle	typeref:typename:void
+vel	particle.hpp	/^        Vec2D vel;$/;"	m	class:Particle	typeref:typename:Vec2D
+width	window.hpp	/^        const int width, height;$/;"	m	class:window	typeref:typename:const int
+window	window.cpp	/^window::window()$/;"	f	class:window
+window	window.cpp	/^window::window(const int& width, const int& height)$/;"	f	class:window
+window	window.hpp	/^class window$/;"	c
+window_object	window.hpp	/^        SDL_Window *window_object;$/;"	m	class:window	typeref:typename:SDL_Window *
+x	vector.hpp	/^        float x, y;$/;"	m	class:Vec2D	typeref:typename:float
+y	vector.hpp	/^        float x, y;$/;"	m	class:Vec2D	typeref:typename:float

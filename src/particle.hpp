@@ -10,6 +10,7 @@ class Particle
 {
     private:
         Vec2D pos;
+        Vec2D origin;
         Vec2D vel;
         Vec2D acc;
 
