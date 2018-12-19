@@ -6,9 +6,12 @@
 #include "particle.hpp"
 #include "random.hpp"
 #include <cmath>
+#include <ctime>
 
 unsigned int WINDOW_WIDTH = 1920;
 unsigned int WINDOW_HEIGHT = 1080;
+
+unsigned int Random::seed = time(NULL);
 
 int main(int argc, char* argv[])
 {
@@ -17,13 +20,15 @@ int main(int argc, char* argv[])
 
     window.createWindow();
 
+    Random::init();
+
     const int total = 1000;
     Particle* parts[total];
     for (int i = 0; i < total; ++i)
     {
         int x = Random::randBetween(0,WINDOW_WIDTH);
         int y = Random::randBetween(0,WINDOW_HEIGHT);
-        
+
         parts[i] = new Particle(x, y);
     }
 
@@ -33,7 +38,7 @@ int main(int argc, char* argv[])
     {
         eh.handleEvents();
         // window.drawBackground(0,0,0);
-        
+
         for (int i = 0; i < total; ++i)
         {
             auto p = parts[i];

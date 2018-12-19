@@ -13,5 +13,7 @@ class Random
     public:
         Random(unsigned int seed); // Speficy the seed in the constructor
 
+        static void init();
+
         static int randBetween(int a, int b); // Gives a random integer between inclusive a and exclusive b
 };

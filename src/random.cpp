@@ -6,10 +6,14 @@
 
 #include "random.hpp"
 
-unsigned int Random::seed = 0;
 
 Random::Random(unsigned int seed)
 {
+}
+
+void Random::init()
+{
+    srand(seed); // Set the seed
 }
 
 int Random::randBetween(int a, int b)
