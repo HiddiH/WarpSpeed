@@ -7,9 +7,12 @@
 #include "random.hpp"
 #include <cmath>
 
+unsigned int WINDOW_WIDTH = 1920;
+unsigned int WINDOW_HEIGHT = 1080;
+
 int main(int argc, char* argv[])
 {
-    window window(1000, 1000);
+    window window(WINDOW_WIDTH, WINDOW_HEIGHT);
     EventHandler eh;
 
     window.createWindow();
@@ -18,8 +21,8 @@ int main(int argc, char* argv[])
     Particle* parts[total];
     for (int i = 0; i < total; ++i)
     {
-        int x = Random::randBetween(0,1000);
-        int y = Random::randBetween(0,1000);
+        int x = Random::randBetween(0,WINDOW_WIDTH);
+        int y = Random::randBetween(0,WINDOW_HEIGHT);
         
         parts[i] = new Particle(x, y);
     }

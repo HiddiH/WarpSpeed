@@ -7,6 +7,9 @@
 #include "particle.hpp"
 #include <cmath>
 
+extern unsigned int WINDOW_WIDTH;
+extern unsigned int WINDOW_HEIGHT;
+
 Particle::Particle(float pos_x, float pos_y)
     : pos(pos_x, pos_y), origin(pos_x, pos_y)
 {
@@ -15,7 +18,7 @@ Particle::Particle(float pos_x, float pos_y)
 void Particle::tick(float t)
 {
     /* Update velocity based on acceleration */
-    Vec2D dir = (pos-Vec2D(500,500));
+    Vec2D dir = (pos-Vec2D(WINDOW_WIDTH/2,WINDOW_HEIGHT/2));
     dir.normalize();
 
     vel = dir * (0.5/(1+exp(-4*(t-3)))+0.0001);
@@ -27,11 +30,11 @@ void Particle::tick(float t)
     acc.x = 0;
     acc.y = 0;
 
-    if (pos.x < 0 || pos.x > 1000) {
+    if (pos.x < 0 || pos.x > WINDOW_WIDTH) {
         pos = OldPos;
     }
 
-    if (pos.y < 0 || pos.y > 1000) {
+    if (pos.y < 0 || pos.y > WINDOW_HEIGHT) {
         pos = OldPos;
     }
 }
