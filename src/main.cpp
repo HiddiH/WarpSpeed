@@ -22,7 +22,7 @@ int main(int argc, char* argv[])
 
     Random::init();
 
-    const int total = 1000;
+    const int total = 500;
     Particle* parts[total];
     for (int i = 0; i < total; ++i)
     {
@@ -37,12 +37,12 @@ int main(int argc, char* argv[])
     while (!eh.needQuit())
     {
         eh.handleEvents();
-        // window.drawBackground(0,0,0);
+        window.drawBackground(0,0,0);
 
         for (int i = 0; i < total; ++i)
         {
             auto p = parts[i];
-            p->tick(SDL_GetTicks()/1000);
+            p->tick(SDL_GetTicks()/1000, window.getRenderer());
             p->show(window.getRenderer());
         }
 
