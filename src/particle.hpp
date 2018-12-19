@@ -13,11 +13,12 @@ class Particle
         Vec2D origin;
         Vec2D vel;
         Vec2D acc;
+        bool Dline = true;
 
     public:
         Particle(float pos_x, float pos_y);
 
-        void tick(float dt);
+        void tick(float dt, SDL_Renderer* r);
         void applyForce(float x, float y);
         void show(SDL_Renderer* r);
 };
